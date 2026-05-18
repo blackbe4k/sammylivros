@@ -6,14 +6,18 @@
   <title>Resenhas Substack</title>
   <style>
     :root {
-      --bg: #5b2a86;
-      --bg-soft: #6a329b;
-      --card: rgba(255, 255, 255, 0.12);
-      --card-border: rgba(255, 255, 255, 0.18);
-      --text: #f7f1ff;
-      --muted: #e7d9ff;
-      --hover: rgba(255, 255, 255, 0.18);
-      --shadow: rgba(22, 7, 35, 0.28);
+      --bg: #07110f;
+      --bg-deep: #020605;
+      --panel: rgba(13, 28, 24, 0.92);
+      --panel-soft: rgba(17, 36, 31, 0.94);
+      --text: #f4ead8;
+      --muted: #b8a98d;
+      --gold: #c69b52;
+      --line: rgba(198, 155, 82, 0.34);
+      --buy: #d97706;
+      --buy-dark: #b75f04;
+      --review: #142620;
+      --shadow: rgba(0, 0, 0, 0.42);
     }
 
     * {
@@ -24,106 +28,293 @@
       margin: 0;
       padding: 0;
       min-height: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, var(--bg) 0%, #4a216d 100%);
+      font-family: Montserrat, Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg-deep);
       color: var(--text);
     }
 
     body {
-      padding: 28px 18px 40px;
+      min-height: 100vh;
+      padding: 30px 18px 44px 118px;
+      background:
+        linear-gradient(90deg, rgba(2, 6, 5, 0.2) 0 96px, rgba(2, 6, 5, 0.88) 96px 100%),
+        radial-gradient(circle at 25px 76%, rgba(198, 155, 82, 0.32), transparent 90px),
+        linear-gradient(90deg, #090d0b 0 94px, transparent 94px),
+        repeating-linear-gradient(90deg, #17110a 0 12px, #332414 12px 17px, #0b0c09 17px 22px),
+        linear-gradient(135deg, #0c1715 0%, #05100f 58%, #020605 100%);
+      background-attachment: fixed;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 98px;
+      content: "";
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(180deg, transparent 0 84px, rgba(215, 162, 64, 0.18) 84px 87px),
+        radial-gradient(circle at 30px 72%, rgba(229, 154, 42, 0.35), transparent 54px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.45), transparent 58%, rgba(0, 0, 0, 0.72));
+      opacity: 0.86;
     }
 
     .container {
-      max-width: 760px;
+      max-width: 1120px;
       margin: 0 auto;
     }
 
     .hero {
-      margin-bottom: 26px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+      padding-bottom: 18px;
     }
 
     .title-link {
-      display: inline-block;
+      color: inherit;
       text-decoration: none;
-      color: var(--text);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      color: var(--text);
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.78);
     }
 
     .subtitle {
-      margin: 10px 0 0;
+      margin: 12px 0 0;
+      max-width: 560px;
       color: var(--muted);
+      font-size: 1.02rem;
+      font-weight: 500;
+    }
+
+    .subtitle::before {
+      display: block;
+      width: 42px;
+      height: 1px;
+      margin-bottom: 10px;
+      background: var(--gold);
+      content: "";
+    }
+
+    .home-link {
+      flex: 0 0 auto;
+      padding: 12px 16px;
+      border: 1px solid rgba(215, 162, 64, 0.58);
+      border-radius: 8px;
+      background: rgba(14, 27, 23, 0.88);
+      color: var(--text);
+      font-family: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .home-link:hover,
+    .home-link:focus {
+      border-color: var(--gold);
+      background: rgba(27, 48, 41, 0.94);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .header-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .book-card {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      gap: 14px;
+      min-height: 168px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(17, 42, 36, 0.92), rgba(6, 20, 18, 0.92)),
+        var(--panel);
+      box-shadow: 0 16px 34px var(--shadow), inset 0 0 0 1px rgba(255, 237, 194, 0.04);
+    }
+
+    .book-cover-link {
+      display: block;
+      align-self: start;
+      border-radius: 6px;
+      outline-offset: 3px;
+    }
+
+    .book-cover {
+      display: block;
+      width: 104px;
+      aspect-ratio: 2 / 3;
+      border-radius: 6px;
+      object-fit: cover;
+      background: #0d1512;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.48);
+    }
+
+    .book-info {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .book-title {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .book-author {
+      display: block;
+      margin-top: 3px;
+      color: var(--gold);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .book-actions {
+      display: grid;
+      gap: 7px;
+      max-width: 150px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      border: 0;
+      border-radius: 6px;
+      padding: 9px 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: none;
+      transition: transform 0.18s ease, filter 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover,
+    .button:focus {
+      filter: brightness(0.94);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .button-review {
+      background: rgba(215, 162, 64, 0.13);
+      color: var(--text);
+    }
+
+    .button-buy {
+      background: var(--buy);
+      color: #fff8dd;
       font-size: 0.98rem;
     }
 
-    .links-box {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 14px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 12px 30px var(--shadow);
-    }
-
-    .links-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .links-list li a {
-      display: block;
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
-    }
-
-    .links-list li a:hover,
-    .links-list li a:focus {
-      background: var(--hover);
-      border-color: rgba(255, 255, 255, 0.24);
-      transform: translateY(-1px);
-      outline: none;
+    .button-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 7px;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
     }
 
     .empty,
     .error {
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-soft);
       color: var(--muted);
     }
 
-    .footer-note {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 520px) {
+    @media (max-width: 800px) {
       body {
-        padding: 22px 14px 32px;
+        padding-left: 18px;
       }
 
-      .links-box {
-        padding: 12px;
-        border-radius: 16px;
+      body::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding: 24px 14px 36px;
       }
 
-      .links-list li a {
-        padding: 13px 14px;
+      .hero {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .home-link {
+        width: fit-content;
+      }
+
+      .hero-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .book-card {
+        grid-template-columns: 86px minmax(0, 1fr);
+      }
+
+      .book-cover {
+        width: 86px;
+      }
+
+      .book-actions,
+      .button {
+        width: 100%;
+        max-width: none;
       }
     }
   </style>
@@ -131,12 +322,32 @@
 <body>
   <main class="container">
     <header class="hero">
-      <a class="title-link" href="https://substack.com" target="_blank" rel="noopener noreferrer">
-        <h1>Resenhas Substack</h1>
-      </a>
+      <div>
+        <a class="title-link" href="https://sammylivros.substack.com/" target="_blank" rel="noopener noreferrer">
+          <h1>Livros Lidos</h1>
+        </a>
+        <p class="subtitle">Minha estante de leitura com resenhas do Substack e link direto para compra na Amazon.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="home-link promo-link" href="https://canva.link/ppfjqp3eh33zph2" target="_blank" rel="noopener noreferrer">
+          <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m3 11 18-5v12L3 13v-2z"></path>
+            <path d="M11.6 16.8a3 3 0 0 1-5.7-1.6"></path>
+          </svg>
+          <span>Divulgações</span>
+        </a>
+        <a class="home-link" href="https://sammylivros.substack.com/" target="_blank" rel="noopener noreferrer">
+          <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 4h12v16l-6-3-6 3V4z"></path>
+            <path d="M8.5 8h7"></path>
+            <path d="M8.5 11h7"></path>
+          </svg>
+          <span>Substack</span>
+        </a>
+      </div>
     </header>
 
-    <section class="links-box">
+    <section aria-label="Lista de resenhas">
       <div id="content" class="empty">Carregando links...</div>
     </section>
   </main>
@@ -144,7 +355,11 @@
   <script>
     async function loadLinks() {
       const content = document.getElementById('content');
-      const BASE_URL = 'https://sammylivros.substack.com/p/';
+      const FALLBACK_COVER = './images/capas/placeholder.svg';
+      const icons = {
+        buy: '<svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h8.9a2 2 0 0 0 1.96-1.6l1.1-5.45H5.12"></path></svg>',
+        review: '<svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path></svg>'
+      };
 
       try {
         const response = await fetch('./links.json', { cache: 'no-store' });
@@ -166,22 +381,72 @@
         );
 
         const ul = document.createElement('ul');
-        ul.className = 'links-list';
+        ul.className = 'books-grid';
 
         sortedLinks.forEach(item => {
-          if (!item.title || !item.slug) return;
+          if (!item.title || !item.reviewUrl) return;
+
+          const reviewUrl = item.reviewUrl;
+          const coverUrl = item.image || FALLBACK_COVER;
 
           const li = document.createElement('li');
-          const a = document.createElement('a');
+          li.className = 'book-card';
 
-          const finalUrl = BASE_URL + item.slug;
+          const coverLink = document.createElement('a');
+          coverLink.className = 'book-cover-link';
+          coverLink.href = reviewUrl;
+          coverLink.target = '_blank';
+          coverLink.rel = 'noopener noreferrer';
 
-          a.href = finalUrl;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.textContent = item.title;
+          const img = document.createElement('img');
+          img.className = 'book-cover';
+          img.src = coverUrl;
+          img.alt = `Capa do livro ${item.title}`;
+          img.loading = 'lazy';
+          img.onerror = () => {
+            img.onerror = null;
+            img.src = FALLBACK_COVER;
+          };
 
-          li.appendChild(a);
+          const info = document.createElement('div');
+          info.className = 'book-info';
+
+          const title = document.createElement('h2');
+          title.className = 'book-title';
+          title.textContent = item.title;
+
+          if (item.author) {
+            const author = document.createElement('span');
+            author.className = 'book-author';
+            author.textContent = item.author;
+            title.appendChild(author);
+          }
+
+          const actions = document.createElement('div');
+          actions.className = 'book-actions';
+
+          if (item.amazonUrl) {
+            const buy = document.createElement('a');
+            buy.className = 'button button-buy';
+            buy.href = item.amazonUrl;
+            buy.target = '_blank';
+            buy.rel = 'noopener noreferrer';
+            buy.innerHTML = `${icons.buy}<span>Compre aqui</span>`;
+            actions.appendChild(buy);
+          }
+
+          const review = document.createElement('a');
+          review.className = 'button button-review';
+          review.href = reviewUrl;
+          review.target = '_blank';
+          review.rel = 'noopener noreferrer';
+          review.innerHTML = `${icons.review}<span>Ler resenha</span>`;
+
+          actions.appendChild(review);
+
+          coverLink.appendChild(img);
+          info.append(title, actions);
+          li.append(coverLink, info);
           ul.appendChild(li);
         });
 
@@ -194,8 +459,6 @@
         content.className = '';
         content.innerHTML = '';
         content.appendChild(ul);
-
-
       } catch (error) {
         content.className = 'error';
         content.textContent = 'Erro ao carregar a lista. Verifique o arquivo links.json.';

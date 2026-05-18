@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-labelledby="title desc">
+  <title id="title">Capa não cadastrada</title>
+  <desc id="desc">Imagem temporária usada quando a capa do livro ainda não foi adicionada.</desc>
+  <rect width="400" height="600" fill="#8f3327"/>
+  <rect x="34" y="34" width="332" height="532" rx="18" fill="#fffaf2" opacity=".92"/>
+  <rect x="72" y="88" width="256" height="16" rx="8" fill="#8f3327" opacity=".32"/>
+  <rect x="72" y="128" width="210" height="16" rx="8" fill="#8f3327" opacity=".32"/>
+  <path d="M120 214h160v172H120z" fill="#211d1a" opacity=".12"/>
+  <path d="M145 242h110v18H145zm0 42h110v18H145zm0 42h72v18h-72z" fill="#211d1a" opacity=".34"/>
+  <text x="200" y="456" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#211d1a">Capa</text>
+  <text x="200" y="492" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#6f6259">em breve</text>
+</svg>
