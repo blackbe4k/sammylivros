@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resenhas Substack</title>
+  <title>Sammy Livros</title>
   <style>
     :root {
       --bg: #07110f;
@@ -264,6 +264,118 @@
       fill: none;
     }
 
+    .promo-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(23, 42, 35, 0.96), rgba(7, 20, 17, 0.96)),
+        var(--panel);
+      box-shadow: 0 16px 34px var(--shadow), inset 0 0 0 1px rgba(255, 237, 194, 0.04);
+    }
+
+    .promo-heading {
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(198, 155, 82, 0.1);
+    }
+
+    .promo-heading h2 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .promo-heading p {
+      margin: 8px 0 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .promo-table-wrap {
+      overflow-x: auto;
+    }
+
+    .promo-table {
+      width: 100%;
+      min-width: 680px;
+      table-layout: fixed;
+      border-collapse: collapse;
+      color: #1c1009;
+      background: #dfbd9d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.08rem;
+    }
+
+    .promo-table td {
+      padding: 13px 14px;
+      border: 1px solid rgba(96, 54, 31, 0.46);
+      vertical-align: middle;
+    }
+
+    .promo-table td:nth-child(2) {
+      width: 44%;
+      font-family: Montserrat, Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.35;
+    }
+
+    .promo-price {
+      width: 82px;
+      font-family: Montserrat, Inter, "Segoe UI", Arial, sans-serif;
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .promo-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      border-top: 1px solid var(--line);
+      background: rgba(6, 20, 18, 0.72);
+    }
+
+    .promo-cta p {
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .promo-cta span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .promo-cta-link {
+      flex: 0 0 auto;
+      padding: 11px 15px;
+      border-radius: 6px;
+      background: var(--buy);
+      color: #fff8dd;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.18s ease, filter 0.18s ease;
+    }
+
+    .promo-cta-link:hover,
+    .promo-cta-link:focus {
+      filter: brightness(0.94);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
     .empty,
     .error {
       padding: 16px;
@@ -300,6 +412,42 @@
       .hero-actions {
         justify-content: flex-start;
       }
+
+      .promo-table {
+        min-width: 0;
+        font-size: 0.78rem;
+      }
+
+      .promo-table td {
+        padding: 9px 6px;
+      }
+
+      .promo-table td:first-child {
+        width: 34%;
+      }
+
+      .promo-table td:nth-child(2) {
+        width: 42%;
+        line-height: 1.28;
+      }
+
+      .promo-price {
+        width: 46px;
+        padding-right: 4px;
+        padding-left: 4px;
+        font-size: 0.76rem;
+      }
+
+      .promo-cta {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 16px;
+      }
+
+      .promo-cta-link {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     @media (max-width: 380px) {
@@ -316,6 +464,10 @@
         width: 100%;
         max-width: none;
       }
+
+      .promo-heading {
+        padding: 16px;
+      }
     }
   </style>
 </head>
@@ -323,36 +475,80 @@
   <main class="container">
     <header class="hero">
       <div>
-        <a class="title-link" href="https://sammylivros.substack.com/" target="_blank" rel="noopener noreferrer">
-          <h1>Livros Lidos</h1>
+        <a class="title-link" href="#" data-view="promo">
+          <h1>Sammy Livros</h1>
         </a>
-        <p class="subtitle">Minha estante de leitura com resenhas do Substack e link direto para compra na Amazon.</p>
+        <p class="subtitle">Divulgações literárias, resenhas e links para quem ama descobrir a próxima leitura.</p>
       </div>
       <div class="hero-actions">
-        <a class="home-link promo-link" href="https://canva.link/ppfjqp3eh33zph2" target="_blank" rel="noopener noreferrer">
+        <a class="home-link promo-link" href="#" data-view="promo">
           <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="m3 11 18-5v12L3 13v-2z"></path>
             <path d="M11.6 16.8a3 3 0 0 1-5.7-1.6"></path>
           </svg>
           <span>Divulgações</span>
         </a>
-        <a class="home-link" href="https://sammylivros.substack.com/" target="_blank" rel="noopener noreferrer">
+        <a class="home-link" href="#" data-view="books">
           <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 4h12v16l-6-3-6 3V4z"></path>
-            <path d="M8.5 8h7"></path>
-            <path d="M8.5 11h7"></path>
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path>
+            <path d="M8 7h8"></path>
+            <path d="M8 10h6"></path>
           </svg>
-          <span>Substack</span>
+          <span>Livros lidos</span>
         </a>
       </div>
     </header>
 
-    <section aria-label="Lista de resenhas">
-      <div id="content" class="empty">Carregando links...</div>
+    <section aria-label="Conteúdo principal">
+      <div id="content"></div>
     </section>
   </main>
 
   <script>
+    function renderPromo() {
+      const content = document.getElementById('content');
+      const rows = [
+        ['Story simples', '1 story com capa + link do livro', 'R$10'],
+        ['Sequência de stories', '3 stories ao longo do dia', 'R$18'],
+        ['Story + destaque', '1 story + destaque por 30 dias', 'R$15'],
+        ['Post foto simples no feed', '1 imagem estática da capa o livro + sinopse', 'R$20'],
+        ['Arte de quote no feed', '1 post com frase do livro em estética literária', 'R$20'],
+        ['Post carrossel simples', '3 a 5 cards apresentando livro, tropes e sinopse', 'R$35'],
+        ['Reel simples', '1 vídeo curto (10s) com capa, frases, trilha e chamada', 'R$40']
+      ];
+
+      content.className = '';
+      content.innerHTML = `
+        <div class="promo-panel">
+          <div class="promo-heading">
+            <h2>Divulgue seu livro comigo</h2>
+            <p>Escolha o formato de divulgação que combina melhor com o seu lançamento.</p>
+          </div>
+          <div class="promo-table-wrap">
+            <table class="promo-table">
+              <tbody>
+                ${rows.map(([name, description, price]) => `
+                  <tr>
+                    <td>${name}</td>
+                    <td>${description}</td>
+                    <td class="promo-price">${price}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+          <div class="promo-cta">
+            <p>
+              Se interessou pela divulgação do seu livro?
+              <span>Me chama na DM e a gente combina o melhor formato.</span>
+            </p>
+            <a class="promo-cta-link" href="https://www.instagram.com/direct/t/18087185579064380/" target="_blank" rel="noopener noreferrer">Chamar na DM</a>
+          </div>
+        </div>
+      `;
+    }
+
     async function loadLinks() {
       const content = document.getElementById('content');
       const FALLBACK_COVER = './images/capas/placeholder.svg';
@@ -466,7 +662,20 @@
       }
     }
 
-    loadLinks();
+    document.querySelectorAll('[data-view]').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+
+        if (link.dataset.view === 'books') {
+          loadLinks();
+          return;
+        }
+
+        renderPromo();
+      });
+    });
+
+    renderPromo();
   </script>
 </body>
 </html>
