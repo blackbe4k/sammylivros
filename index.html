@@ -305,6 +305,22 @@
       color: var(--text);
     }
 
+    .review-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      border: 1px solid rgba(200, 155, 109, 0.42);
+      border-radius: 6px;
+      padding: 9px 12px;
+      background: rgba(201, 155, 220, 0.08);
+      color: var(--gold);
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1;
+      text-align: center;
+    }
+
     .button-buy {
       background: var(--buy);
       color: #fff8dd;
@@ -540,7 +556,8 @@
       }
 
       .book-actions,
-      .button {
+      .button,
+      .review-label {
         width: 100%;
         max-width: none;
       }
@@ -699,19 +716,14 @@
         }
 
         sortedLinks.forEach(item => {
-          if (!item.title || !item.reviewUrl) return;
+          if (!item.title) return;
 
-          const reviewUrl = item.reviewUrl;
+          const reviewUrl = (item.reviewUrl || '').trim();
+          const hasReview = Boolean(reviewUrl);
           const coverUrl = item.image || FALLBACK_COVER;
 
           const li = document.createElement('li');
           li.className = 'book-card';
-
-          const coverLink = document.createElement('a');
-          coverLink.className = 'book-cover-link';
-          coverLink.href = reviewUrl;
-          coverLink.target = '_blank';
-          coverLink.rel = 'noopener noreferrer';
 
           const img = document.createElement('img');
           img.className = 'book-cover';
@@ -750,18 +762,35 @@
             actions.appendChild(buy);
           }
 
-          const review = document.createElement('a');
-          review.className = 'button button-review';
-          review.href = reviewUrl;
-          review.target = '_blank';
-          review.rel = 'noopener noreferrer';
-          review.innerHTML = `${icons.review}<span>Ler resenha</span>`;
+          if (hasReview) {
+            const review = document.createElement('a');
+            review.className = 'button button-review';
+            review.href = reviewUrl;
+            review.target = '_blank';
+            review.rel = 'noopener noreferrer';
+            review.innerHTML = `${icons.review}<span>Ler resenha</span>`;
+            actions.appendChild(review);
+          } else {
+            const reviewLabel = document.createElement('span');
+            reviewLabel.className = 'review-label';
+            reviewLabel.textContent = 'Resenha em breve';
+            actions.appendChild(reviewLabel);
+          }
 
-          actions.appendChild(review);
+          if (hasReview) {
+            const coverLink = document.createElement('a');
+            coverLink.className = 'book-cover-link';
+            coverLink.href = reviewUrl;
+            coverLink.target = '_blank';
+            coverLink.rel = 'noopener noreferrer';
+            coverLink.appendChild(img);
+            li.appendChild(coverLink);
+          } else {
+            li.appendChild(img);
+          }
 
-          coverLink.appendChild(img);
           info.append(title, actions);
-          li.append(coverLink, info);
+          li.appendChild(info);
           ul.appendChild(li);
         });
 

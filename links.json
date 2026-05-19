@@ -117,5 +117,103 @@
     "reviewUrl": "https://sammylivros.substack.com/p/notas-de-leitura-trono-de-vidro",
     "image": "./images/capas/trono-de-vidro-sarah-j-maas.jpg",
     "amazonUrl": "https://amzn.to/4fdz0dR"
+  },
+  {
+    "title": "Nona Casa",
+    "author": "Leigh Bardugo",
+    "reviewUrl": "https://sammylivros.substack.com/p/nona-casa-leigh-bardugo",
+    "image": "./images/capas/nona-casa-leigh-bardugo.jpg",
+    "amazonUrl": "https://amzn.to/4ul1Nlb"
+  },
+  {
+    "title": "Para o Inferno",
+    "author": "Leigh Bardugo",
+    "reviewUrl": "",
+    "image": "./images/capas/para-o-inferno-leigh-bardugo.jpg",
+    "amazonUrl": "https://amzn.to/49X6OIm"
+  },
+  {
+    "title": "Memórias do Subsolo",
+    "author": "Fiódor Dostoiévski",
+    "reviewUrl": "",
+    "image": "./images/capas/memorias-do-subsolo-dostoievski.jpg",
+    "amazonUrl": "https://amzn.to/4unqiOT"
+  },
+  {
+    "title": "Noites Brancas",
+    "author": "Fiódor Dostoiévski",
+    "reviewUrl": "",
+    "image": "./images/capas/noites-brancas-dostoievski.jpg",
+    "amazonUrl": "https://amzn.to/3RiFwWE"
+  },
+  {
+    "title": "100 minutos para entender Freud",
+    "author": "Astral Cultural",
+    "reviewUrl": "",
+    "image": "./images/capas/100-minutos-freud.jpg",
+    "amazonUrl": "https://amzn.to/4nBdy4m"
+  },
+  {
+    "title": "Existencialismo é um humanismo",
+    "author": "Jean-Paul Sartre",
+    "reviewUrl": "",
+    "image": "./images/capas/existencialismo-sartre.jpg",
+    "amazonUrl": "https://amzn.to/4wLUCEr"
+  },
+  {
+    "title": "Corte de Asas e Ruína",
+    "author": "Sarah J. Maas",
+    "reviewUrl": "",
+    "image": "./images/capas/corte-de-asas-e-ruina-sarah-j-maas.jpg",
+    "amazonUrl": "https://amzn.to/3RlF1uT"
+  },
+  {
+    "title": "Corte de Chamas Prateadas",
+    "author": "Sarah J. Maas",
+    "reviewUrl": "",
+    "image": "./images/capas/corte-de-chamas-prateadas-sarah-j-maas.jpg",
+    "amazonUrl": "https://amzn.to/4dlshNy"
+  },
+  {
+    "title": "O Ego e o Id",
+    "author": "Sigmund Freud",
+    "reviewUrl": "",
+    "image": "./images/capas/o-ego-e-o-id-freud.jpg",
+    "amazonUrl": "https://amzn.to/4wuWyAS"
+  },
+  {
+    "title": "A Arte da Guerra",
+    "author": "Sun Tzu",
+    "reviewUrl": "",
+    "image": "./images/capas/a-arte-da-guerra-sun-tzu.jpg",
+    "amazonUrl": "https://amzn.to/4dzSzdJ"
+  },
+  {
+    "title": "Macbeth",
+    "author": "William Shakespeare",
+    "reviewUrl": "",
+    "image": "./images/capas/macbeth-william-shakespeare.jpg",
+    "amazonUrl": "https://amzn.to/4uPjM30"
+  },
+  {
+    "title": "O Fim da Eternidade",
+    "author": "Isaac Asimov",
+    "reviewUrl": "",
+    "image": "./images/capas/o-fim-da-eternidade-isaac-asimov.jpg",
+    "amazonUrl": "https://amzn.to/4dmgZIV"
+  },
+  {
+    "title": "Meu Pé de Laranja Lima",
+    "author": "José Mauro de Vasconcelos",
+    "reviewUrl": "",
+    "image": "./images/capas/meu-pe-de-laranja-lima-jose-mauro-de-vasconcelos.jpg",
+    "amazonUrl": "https://amzn.to/3PdCTVz"
+  },
+  {
+    "title": "Os contos de beedle, o bardo",
+    "author": " J.K. Rowling",
+    "reviewUrl": "",
+    "image": "./images/capas/os-contos-de-beedle-o-bardo-j-k-rowling.jpg",
+    "amazonUrl": "https://amzn.to/3Rz025k"
   }
 ]
