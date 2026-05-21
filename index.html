@@ -6,17 +6,17 @@
   <title>@sammylivros</title>
   <style>
     :root {
-      --bg: #171021;
-      --bg-deep: #09050f;
-      --panel: rgba(31, 20, 43, 0.94);
-      --panel-soft: rgba(43, 29, 58, 0.94);
-      --text: #f5edf8;
-      --muted: #c9b8d4;
-      --gold: #c89b6d;
-      --line: rgba(201, 155, 220, 0.3);
-      --buy: #8b4cc2;
-      --buy-dark: #6d379e;
-      --review: #2a1c39;
+      --bg: #151411;
+      --bg-deep: #070706;
+      --panel: rgba(29, 27, 23, 0.94);
+      --panel-soft: rgba(39, 35, 29, 0.94);
+      --text: #f4efe5;
+      --muted: #c8bdad;
+      --gold: #c6a15b;
+      --line: rgba(198, 161, 91, 0.28);
+      --buy: #8f3327;
+      --buy-dark: #6f241e;
+      --review: #28362f;
       --shadow: rgba(0, 0, 0, 0.42);
     }
 
@@ -37,9 +37,9 @@
       min-height: 100vh;
       padding: 30px 18px 44px;
       background:
-        radial-gradient(circle at 16% 18%, rgba(139, 76, 194, 0.28), transparent 190px),
-        radial-gradient(circle at 84% 8%, rgba(201, 155, 220, 0.16), transparent 230px),
-        linear-gradient(135deg, #20122e 0%, #130b1f 52%, #08050d 100%);
+        radial-gradient(circle at 16% 18%, rgba(143, 51, 39, 0.24), transparent 190px),
+        radial-gradient(circle at 84% 8%, rgba(198, 161, 91, 0.14), transparent 230px),
+        linear-gradient(135deg, #1d1a15 0%, #11100d 52%, #070706 100%);
       background-attachment: fixed;
     }
 
@@ -96,9 +96,9 @@
     .home-link {
       flex: 0 0 auto;
       padding: 12px 16px;
-      border: 1px solid rgba(201, 155, 220, 0.48);
+      border: 1px solid rgba(198, 161, 91, 0.42);
       border-radius: 8px;
-      background: rgba(32, 20, 45, 0.88);
+      background: rgba(28, 25, 21, 0.88);
       color: var(--text);
       font-family: inherit;
       font-weight: 700;
@@ -118,13 +118,13 @@
     .home-link:focus,
     .home-link.is-active {
       border-color: var(--gold);
-      background: rgba(54, 34, 74, 0.94);
+      background: rgba(54, 42, 29, 0.94);
       outline: none;
       transform: translateY(-1px);
     }
 
     .home-link.is-active {
-      box-shadow: 0 0 0 1px rgba(200, 155, 109, 0.42), 0 10px 28px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 0 0 1px rgba(198, 161, 91, 0.42), 0 10px 28px rgba(0, 0, 0, 0.22);
     }
 
     .header-icon {
@@ -157,9 +157,9 @@
       border: 1px solid rgba(200, 155, 109, 0.62);
       border-radius: 8px;
       background:
-        linear-gradient(145deg, rgba(61, 36, 82, 0.96), rgba(19, 10, 30, 0.96)),
+        linear-gradient(145deg, rgba(52, 42, 30, 0.96), rgba(19, 17, 14, 0.96)),
         var(--panel);
-      box-shadow: 0 18px 38px var(--shadow), inset 0 0 0 1px rgba(245, 237, 248, 0.05);
+      box-shadow: 0 18px 38px var(--shadow), inset 0 0 0 1px rgba(244, 239, 229, 0.05);
     }
 
     .reading-cover {
@@ -168,7 +168,7 @@
       aspect-ratio: 2 / 3;
       border-radius: 6px;
       object-fit: cover;
-      background: #140d1f;
+      background: #100f0d;
       box-shadow: 0 14px 24px rgba(0, 0, 0, 0.5);
     }
 
@@ -222,9 +222,9 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background:
-        linear-gradient(145deg, rgba(44, 28, 60, 0.94), rgba(18, 10, 28, 0.94)),
+        linear-gradient(145deg, rgba(36, 33, 27, 0.94), rgba(16, 15, 13, 0.94)),
         var(--panel);
-      box-shadow: 0 16px 34px var(--shadow), inset 0 0 0 1px rgba(245, 237, 248, 0.04);
+      box-shadow: 0 16px 34px var(--shadow), inset 0 0 0 1px rgba(244, 239, 229, 0.04);
     }
 
     .book-cover-link {
@@ -240,7 +240,7 @@
       aspect-ratio: 2 / 3;
       border-radius: 6px;
       object-fit: cover;
-      background: #140d1f;
+      background: #100f0d;
       box-shadow: 0 12px 20px rgba(0, 0, 0, 0.48);
     }
 
@@ -301,7 +301,7 @@
     }
 
     .button-review {
-      background: rgba(201, 155, 220, 0.13);
+      background: var(--review);
       color: var(--text);
     }
 
@@ -313,7 +313,7 @@
       border: 1px solid rgba(200, 155, 109, 0.42);
       border-radius: 6px;
       padding: 9px 12px;
-      background: rgba(201, 155, 220, 0.08);
+      background: rgba(198, 161, 91, 0.1);
       color: var(--gold);
       font-size: 0.88rem;
       font-weight: 800;
@@ -325,6 +325,13 @@
       background: var(--buy);
       color: #fff8dd;
       font-size: 0.98rem;
+    }
+
+    .button-buy:hover,
+    .button-buy:focus,
+    .promo-cta-link:hover,
+    .promo-cta-link:focus {
+      background: var(--buy-dark);
     }
 
     .button-icon {
@@ -344,15 +351,15 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background:
-        linear-gradient(145deg, rgba(48, 30, 65, 0.96), rgba(17, 10, 27, 0.96)),
+        linear-gradient(145deg, rgba(36, 33, 27, 0.96), rgba(14, 14, 12, 0.96)),
         var(--panel);
-      box-shadow: 0 16px 34px var(--shadow), inset 0 0 0 1px rgba(245, 237, 248, 0.04);
+      box-shadow: 0 16px 34px var(--shadow), inset 0 0 0 1px rgba(244, 239, 229, 0.04);
     }
 
     .promo-heading {
       padding: 20px;
       border-bottom: 1px solid var(--line);
-      background: rgba(139, 76, 194, 0.14);
+      background: rgba(143, 51, 39, 0.16);
     }
 
     .promo-heading h2 {
@@ -380,15 +387,15 @@
       min-width: 680px;
       table-layout: fixed;
       border-collapse: collapse;
-      color: #211225;
-      background: #d9c2df;
+      color: #211a14;
+      background: #d8c7a6;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.08rem;
     }
 
     .promo-table td {
       padding: 13px 14px;
-      border: 1px solid rgba(74, 43, 89, 0.38);
+      border: 1px solid rgba(82, 59, 36, 0.38);
       vertical-align: middle;
     }
 
@@ -414,7 +421,7 @@
       gap: 12px;
       padding: 18px 20px;
       border-top: 1px solid var(--line);
-      background: rgba(18, 10, 28, 0.72);
+      background: rgba(15, 14, 12, 0.72);
     }
 
     .promo-cta p {
